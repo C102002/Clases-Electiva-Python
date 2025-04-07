@@ -1,5 +1,5 @@
 class Robot:
- 
+    # Atributos de clase por defecto
     def __init__(self, name=None, build_year=2000):
         self.__name = name
         self.__build_year = build_year
@@ -28,7 +28,7 @@ class Robot:
     def __str__(self):
         return "Name: " + self.__name + ", Build Year: " +  str(self.__build_year)
 
-     
+    #  Este metodo del main es lo que permite que se pueda ejecutar el script directamente
 if __name__ == "__main__":
     x = Robot("Marvin", 1979)
     y = Robot("Caliban", 1943)
