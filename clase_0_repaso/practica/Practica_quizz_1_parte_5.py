@@ -8,9 +8,23 @@
 # Copia tu código con la respuesta en el lugar indicado.
 
 import time
+
 class Timer:
+    def __init__(self):
+        pass
+    
     def __enter__(self):
-        self.inicio_time=time.time()
-    def __exit__(self,exc_type,exc_val,exc_tb):
-        fin_time=time.time()
-        transcurrido_time=fin_time-self.inicio_time
+        self.inicio_time = time.time()
+        return self  # Retorna la instancia para usarla dentro del bloque
+    
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.fin_time = time.time()
+        self.transcurrido_time = self.fin_time - self.inicio_time
+        print(f"Tiempo transcurrido: {self.transcurrido_time:.2f} segundos")
+
+if __name__ == "__main__":
+    # Usar el gestor de contexto correctamente
+    with Timer() as t:
+        # Bloque de código para medir el tiempo de ejecución
+        for _ in range(1000000):
+            pass
