@@ -1,4 +1,4 @@
-"""
+# """
 # recorriendo un diccionario
 dict = {1:2, 2:3, 3:4, 4:5, 5:6}
 for k,v in dict.items():
@@ -46,7 +46,7 @@ for i in sorted(lista):
 
 print()
 
-"""
+# """
 lista = [23, 45, 23, 67, 4, 8, 1, 65]
 # de mayor a menor
 for i in sorted(lista, reverse= True):
