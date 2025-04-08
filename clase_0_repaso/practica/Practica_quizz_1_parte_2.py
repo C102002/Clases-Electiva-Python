@@ -20,4 +20,16 @@ if __name__ == "__main__":
     for num in secuencia:
         print(num, end=' ')
     print()
-    
+
+
+# #funcion generadora:
+# def fibonacci():
+# a, b = 0, 1
+# while True:
+# yield a
+# a, b = b, a + b
+# fibonacciR = (x for x in fibonacci())
+# for i, number in enumerate(fibonacciR, 1):
+# print(number)
+# if i == 15:
+# break
