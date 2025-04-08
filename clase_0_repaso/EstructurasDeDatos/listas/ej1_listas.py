@@ -8,7 +8,7 @@ print(frutas)
 
 #ver el tipo
 print(type(frutas))
-
+# ? Deberia ser class "list"
 
 # contar elemento de una lista
 print('\n',frutas.count('manzana'))

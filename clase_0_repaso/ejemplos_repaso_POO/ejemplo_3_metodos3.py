@@ -6,12 +6,14 @@ class Pizza:
         self.ingredients = ingredients
 
     def __repr__(self):
+        # Formato de salida
         return (f'Pizza({self.radius}, '
                 f'{self.ingredients})')
 
     def area(self):
         return self.circle_area(self.radius)
-
+    
+    # Metodo estatico para conseguir el area de un circulo
     @staticmethod
     def circle_area(r):
         return r ** 2 * math.pi

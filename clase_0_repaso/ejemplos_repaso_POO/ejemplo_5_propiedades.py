@@ -2,11 +2,13 @@ class P:
 
     def __init__(self,x):
         self.__x = x
-
+        
+    # Profiedad ques diferente a un atributo
     @property
     def x(self):
         return self.__x
-
+    
+    # Asigna un setter para la propiedad x
     @x.setter
     def x(self, x):
         if x < 0:
