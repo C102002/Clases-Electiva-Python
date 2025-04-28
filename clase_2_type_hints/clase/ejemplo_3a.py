@@ -8,4 +8,4 @@ def get_first(l: List[T]) -> T:
 numbers: List[int] = [1, 2, 3]
 
 result: int = get_first(numbers) # usado correctamente
-result2: str = get_first(numbers) # no usado correctamente
+result2: str = get_first(numbers) # no usado correctamente (lanza error)
