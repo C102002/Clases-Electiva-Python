@@ -10,9 +10,9 @@ price_dict: Dict[str,int] = {
     'item_2' : 500,
 }
 
-print(price)
-print(immutable_price)
-print(price_dict)
+print(f"price:{price}")
+print(f"immutable_price:{immutable_price}")
+print(f"immutable_price:{price_dict}")
 
 # Anotando structuras de datos complejas:
 x: List[Union[int, float]] = [2,3,4.1,5,6.2]
