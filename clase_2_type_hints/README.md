@@ -100,3 +100,17 @@ def get_name -> str | None: #(desde Python 3.10+)
 ### - Métodos dunder
 
 ### - Funciones Generadoras
+
+Es cuando no no deseamos sobreescribir los métodos iter() y next() para trabajar con una iteración todo el tiempo. Para ello usamos ***las funciones generadoras***. 
+
+
+>[!NOTE] 
+> ***Funcion generadora:*** Un generador o función generadora es una función que no devuelve un único valor, sino un objeto iterador (un iterable) con una secuencia de valores cuando se itera sobre él
+>
+>En Python, de forma similar a la definición de una función normal, podemos definir una función generadora utilizando la palabra clave **def**, pero en lugar de la sentencia return utilizamos la sentencia **yield**.
+>```python
+># Ejemplo
+>def nombre_generador(arg):
+># sentencias
+>yield algo
+>```
