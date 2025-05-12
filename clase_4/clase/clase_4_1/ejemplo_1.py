@@ -17,6 +17,8 @@ external_data = {
     'friends': [1, '2', b'3'],
 }
 
+# ! OJO el **external_data es como un desempaquetador del diccionario
+# En pocas palabras, es como el spread {...} de TS
 user = User(**external_data)
 
 print(user)

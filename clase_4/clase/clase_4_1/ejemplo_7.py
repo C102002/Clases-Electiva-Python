@@ -10,5 +10,5 @@ class Blog(BaseModel):
 print(Blog(title="Our First Blog",is_active=True))
 
 time.sleep(5)
-
+# Sigue dando el mismo valor porque es un metodo de clase
 print(Blog(title="Our Second Blog",is_active=True))

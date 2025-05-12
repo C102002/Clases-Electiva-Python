@@ -17,7 +17,7 @@ print(f"el objeto serializado a un dict: {user_dict}")
 print()  
 
 # Serializar el objeto a JSON
-
+# Es como el JSON.stringify de TS
 user_json = json.dumps(user_dict)
 print(f"el objeto serializado a json {user_json}")
 print()  
