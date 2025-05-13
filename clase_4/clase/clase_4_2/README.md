@@ -51,7 +51,7 @@ pip install “uvicorn[standard]”
 En el root del proyecto
 ```bash
 # corre fastapi
-uvicorn main:app –-reload
+uvicorn main:app --reload
 ```
 
 Si se corrio exitosamente deberia de salir algo similar a lo siguiente:
