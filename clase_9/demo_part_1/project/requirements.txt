@@ -1,0 +1,7 @@
+# app
+fastapi==0.115.5
+uvicorn==0.32.0
+
+# db
+sqlmodel==0.0.22
+psycopg2-binary==2.9.10

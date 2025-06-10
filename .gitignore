@@ -1,3 +1,10 @@
+# Ignorar archivo .history de Alembic
+.history
+
+# Ignorar archivos compilados y __pycache__ dentro de migrations/versions
+migrations/versions/*.pyc
+migrations/versions/__pycache__/
+
 # Ignore all virtual environment folders named 'venv' in any path
 **/venv/
 
@@ -45,10 +52,6 @@ pyvenv.cfg
 .project
 .settings
 .pydevproject
-
-# Ignore all virtual environment folders named 'venv' in any path
-**/venv/
-
 
 # Unit test / coverage reports
 .coverage

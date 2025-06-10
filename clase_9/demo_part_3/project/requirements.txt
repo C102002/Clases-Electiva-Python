@@ -1,0 +1,12 @@
+# app
+fastapi==0.115.5
+uvicorn==0.32.0
+
+# async
+greenlet==3.1.1
+
+# db
+sqlmodel==0.0.22
+# psycopg2-binary==2.9.10
+asyncpg==0.30.0
+alembic==1.14.0
