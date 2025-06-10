@@ -33,7 +33,7 @@ pip install -r requirements.txt
 
 ```bash
 # Ejecutar el siguiente comando
-$ pip freeze > requirements.txt
+pip freeze > requirements.txt
 ```
 
 ## Temario:
@@ -51,3 +51,14 @@ La programación asíncrona en Python permite gestionar múltiples tareas concur
 #### Alembic
 
 Alembic es una herramienta de migraciones de bases de datos que se integra con SQLAlchemy. Con Alembic, puedes gestionar y versionar los cambios en el esquema de la base de datos de manera controlada y reproducible. Cada vez que realizas modificaciones en tus modelos (por ejemplo, agregar o eliminar columnas), Alembic te ayuda a generar un script de migración que se puede aplicar de forma incremental. Esta herramienta es esencial para mantener la integridad de la base de datos, facilitando la actualización y despliegue de las aplicaciones en diferentes entornos sin perder el historial o la estructura de los datos.
+
+
+## Correr el proyecto
+
+### 1. Ejecutar el proyecto
+
+En el root del proyecto
+```bash
+# corre fastapi
+uvicorn main:app --reload
+```
