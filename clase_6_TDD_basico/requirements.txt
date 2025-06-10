@@ -1,0 +1,5 @@
+fastapi
+uvicorn[standart]
+pytest
+httpx
+loguru
