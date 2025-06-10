@@ -1,0 +1,5 @@
+fastapi==0.111.0
+sqlalchemy==2.0.30
+alembic==1.13.1
+pytest==8.2.2
+loguru==0.7.2
