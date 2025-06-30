@@ -4,7 +4,7 @@ from sqlmodel import SQLModel, Field
 class BookBase(SQLModel):
     name: str
     author: str
-    # year: int | None = None
+    year: int | None = None
 
 
 class Book(BookBase, table=True):
