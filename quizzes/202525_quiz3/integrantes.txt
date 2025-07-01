@@ -1,0 +1,6 @@
+CI      Apellido, Nombre
+
+29662095 Fung, Alfredo
+29987471 Bortot, Daniel
+29625836 Hedderich, Juan
+28708381 Chiang, Hualong

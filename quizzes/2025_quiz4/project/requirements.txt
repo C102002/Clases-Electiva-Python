@@ -1,0 +1,11 @@
+# app
+fastapi==0.115.12
+uvicorn==0.34.3
+
+# async
+greenlet==3.2.3
+
+# db
+sqlmodel==0.0.24
+asyncpg==0.30.0
+alembic==1.16.1
