@@ -1,4 +1,4 @@
-# Clase 11
+# Practiica 11
 
 ## ¿Como correrlo?
 
@@ -34,49 +34,11 @@ pip install -r requirements.txt
 pip freeze > requirements.txt
 ```
 
-## Temario:
-
-### - EDA (Event Driven Architecture)
-
 ## Correr el proyecto
 
 ### 1. Ejecutar el proyecto
 
 En el root del proyecto *actor model*
-```bash
-# corre fastapi
-uvicorn main:app --reload
-```
-
-En el root del proyecto *CQRS*
-
-```bash
-# corre fastapi
-uvicorn main:app --reload
-```
-
-En el root del proyecto *event_sourcing*
-
-```bash
-# corre fastapi
-uvicorn main:app --reload
-```
-En el root del proyecto *message_queue*
-
-```bash
-# corre fastapi
-uvicorn main:app --reload
-```
-
-En el root del proyecto *pubsub*
-
-```bash
-# corre fastapi
-uvicorn main:app --reload
-```
-
-En el root del proyecto *state_machine*
-
 ```bash
 # corre fastapi
 uvicorn main:app --reload
