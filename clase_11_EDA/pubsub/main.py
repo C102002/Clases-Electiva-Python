@@ -6,7 +6,8 @@ import asyncio
 from pydantic import BaseModel
 
 # clase para definir e identificar un subscriptor de manera independiente
-class Subscriber:
+class Subscriber(BaseModel):
+    id:int
     def __init__(self, id: int):
         self.id = id
 
