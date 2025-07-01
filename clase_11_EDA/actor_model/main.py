@@ -66,3 +66,9 @@ async def handle_ticket_message(message: TicketMessage):
     
     return response
 
+# Endpoint para enviar mensajes a los actores
+@app.get("/ticket/")
+async def get_tickes():
+    # Crear el actor si no existe
+    return ticket_actors
+

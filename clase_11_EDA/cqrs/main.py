@@ -64,6 +64,14 @@ async def get_order_status_endpoint(order_id: str):
     status = get_order_status(order_id)  # Consultar el estado del pedido
     return {"order_id": order_id, "status": status["status"], "total_amount": status["total_amount"]}
 
+# Endpoint para consultar el estado de todos
+@app.get("/order_status/", response_model=list[OrderQueryResponse])
+async def get_all_order_status_endpoint():
+    return [
+        OrderQueryResponse(order_id=oid, **data)
+        for oid, data in orders_queries.items()
+    ]
+
 # Usando lifespan para la inicialización
 @asynccontextmanager
 async def lifespan(app: FastAPI):

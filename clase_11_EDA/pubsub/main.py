@@ -1,7 +1,9 @@
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 import asyncio
+
+from pydantic import BaseModel
 
 # clase para definir e identificar un subscriptor de manera independiente
 class Subscriber:
@@ -12,10 +14,19 @@ class Subscriber:
         await asyncio.sleep(1)
         print(f"Suscriptor {self.id} recibió el evento: {event}")
         return f"Suscriptor {self.id} procesó el evento."
+    
+    def __repr__(self):
+        """
+        Provides a developer-friendly string representation of the object.
+        """
+        return f"Subscriber(id={self.id})"
 
 
 # Lista de suscriptores que "escuchan" los eventos
-subscribers = []
+subscribers:list[Subscriber] = []
+
+class SubscriberOut(BaseModel):
+    id: int
 
 # Usando lifespan para manejar eventos de inicio y cierre de la aplicación
 @asynccontextmanager
@@ -52,3 +63,21 @@ async def subscribe(subscriber_id: int):
     subscribers.append(subscriber.handle_event)
     return {"message": f"Suscriptor {subscriber_id} agregado."}
 
+# Endpoint para saber los suscriptores
+#! OJO como no es un objeto de pydantic no da chance de hacer el JSON normal
+@app.get("/subscribe/")
+async def get_all_subscribers():
+    return subscribers
+
+# Endpoint para saber si hay un sub
+@app.get("/subscribe/{subscriber_id}")
+async def get_one_subscriber(subscriber_id: int):
+
+    for subscriber in subscribers:
+    # Comparamos si el valor de la llave "id" es igual al que buscamos
+        if subscriber.id == subscriber_id:
+            # Si lo encontramos, retornamos ese diccionario
+            return subscriber
+
+    # Si el bucle termina y no encontramos nada, lanzamos un error 404
+    raise HTTPException(status_code=404, detail="Suscriptor no encontrado")
