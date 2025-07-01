@@ -28,25 +28,21 @@ class Address(BaseModel):
     street: str= Field(max_length=16)
     city: str = Field(min_length=3)
     zipcode: int = Field(gt=0)  
-    
-    
-class EmployeeId(BaseModel):
-    employee_id:int =Field(gt=0,default_factory=lambda: random.randint(1, 1_000_000),)
-    
+        
 class EmployeeName(BaseModel):
     name:str =Field(max_length=10)
 
 # Entity
 # Crea una Entity llamada Employee que contenga un employee_id , name y una Address
 class Employee(BaseModel):
-    employee_id:EmployeeId | None
-    name:EmployeeName
+    employee_id:int= Field(None,gt=0)
+    name:str =Field(max_length=10)
     address:Address
 
 # Aggregate Root
 # rea un Aggregate Root llamado EmployeeAgregate que tenga un employee_id y un Employee
 class EmployeeAggregate(BaseModel):
-    employee_id:EmployeeId
+    employee_id:int=Field(gt=0)
     employee:Employee
     
 # Repository
@@ -95,6 +91,9 @@ employee_repository = PostgressEmployeeRepository()
 
 @app.post("/employees")
 async def create_employee(items: Employee):
+    if items.employee_id is None:
+        items.employee_id=int(random.uniform(1,1000))
+    
     employee_agregate=EmployeeAggregate(
         employee_id=items.employee_id,
         employee=items
